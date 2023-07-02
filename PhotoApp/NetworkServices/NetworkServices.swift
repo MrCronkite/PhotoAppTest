@@ -81,7 +81,7 @@ final class NetworkServicesImpl: NetworkServices {
         body.append("Content-Disposition: form-data; name=\"typeId\"\r\n\r\n".data(using: .utf8)!)
         body.append("\(id)".data(using: .utf8)!)
         body.append("\r\n".data(using: .utf8)!)
-
+        
         // Добавляем изображение в тело запроса
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"photo\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)

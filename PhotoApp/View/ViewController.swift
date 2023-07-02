@@ -47,7 +47,7 @@ extension ViewController {
         mainTableView.dataSource = self
     }
     
-   private func showAlert(text: String, title: String) {
+    private func showAlert(text: String, title: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .actionSheet)
         let actionAC = UIAlertAction(title: "OK", style: .cancel)
         
@@ -84,7 +84,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.id = indexPath.row
-    
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
