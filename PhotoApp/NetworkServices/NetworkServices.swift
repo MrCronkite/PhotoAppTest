@@ -11,7 +11,10 @@ protocol NetworkServices {
     func getData(page: Int, complition: @escaping (Result<Element, Error>) -> Void)
     func sendPostData(id: Int, image: Data, complition: @escaping (Result<String, Error>) -> Void)
     
-    func loadImage(imageURL: URL, runQueue: DispatchQueue, complitionQueue: DispatchQueue, complition: @escaping (UIImage?, Error?) -> ())
+    func loadImage(imageURL: URL,
+                   runQueue: DispatchQueue,
+                   complitionQueue: DispatchQueue,
+                   complition: @escaping (UIImage?, Error?) -> ())
 }
 
 enum Errors: Error {
@@ -51,7 +54,10 @@ final class NetworkServicesImpl: NetworkServices {
         request.resume()
     }
     
-    func loadImage(imageURL: URL, runQueue: DispatchQueue, complitionQueue: DispatchQueue, complition: @escaping (UIImage?, Error?) -> ()) {
+    func loadImage(imageURL: URL,
+                   runQueue: DispatchQueue,
+                   complitionQueue: DispatchQueue,
+                   complition: @escaping (UIImage?, Error?) -> ()) {
         runQueue.async {
             do {
                 let data = try Data(contentsOf: imageURL)
